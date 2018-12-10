@@ -21,11 +21,10 @@
   ];
   //创建一个table
   var table = document.createElement("table");
-  //把table添加到id为data的后边
-  document.getElementById("data").appendChild(table);
-  //创建一个thead,添加到table后边
-  var  thead = document.createElement("thead");
-  table.appendChild(thead);
+  // //创建一个thead,添加到table后边
+  // var  thead = document.createElement("thead");
+  // table.appendChild(thead);
+  var thead = table.createTHead();
   //创建一个tr 添加到thead后边
   var tr = document.createElement("tr");
   thead.appendChild(tr);
@@ -39,10 +38,13 @@
     tr.appendChild(th);
   }
   //创建一个tbody 添加到table里,不是thead里
-  var tbody = document.createElement("tbody");
-  table.appendChild(tbody);
-  //遍历json里的数据,根据下标. 遍历完一个,添加一个tr
+  // var tbody = document.createElement("tbody");
+  // table.appendChild(tbody);
+  var tbody = table.createTBody();
+  
+  //遍历json里的对象,根据下标. 遍历完一个,添加一个tr
   for( var i =0 ; i <json.length;i++){
+   
     var tr = document.createElement("tr");
     tbody.appendChild(tr);
     //遍历每个对象的属性,把属性值添加到列中, 每添加一个值,增加一个td
@@ -50,10 +52,12 @@
     for(var key in info){
       var td = document.createElement("td");
       td.innerHTML = info[key];
-      tr.appendChild(td);
+      tr.appendChild(td); 
     }
   }
-
+    //把table添加到id为data的后边
+    //最后把table添加到DOM Tree里,这样一次重排重绘就可以了,而不是放在最前边,这样会进行很多次重排重绘,提升效率
+    document.getElementById("data").appendChild(table);
   </script>
 </body>
 </html>

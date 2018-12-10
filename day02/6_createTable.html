@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>动态创建表格</title>
+<meta charset="utf-8" />
+<style>
+	table{width:600px; border-collapse:collapse;
+		text-align:center;
+	}
+	td,th{border:1px solid #ccc}
+</style>
+
+</head>
+<body>
+	<div id="data"></div>
+  <script>
+	var json=[
+    {"ename":"Tom", "salary":11000, "age":25},
+    {"ename":"John", "salary":13000, "age":28},
+    {"ename":"Mary", "salary":12000, "age":25}
+  ];
+  //创建一个table
+  var table = document.createElement("table");
+  //把table添加到id为data的后边
+  document.getElementById("data").appendChild(table);
+  //创建一个thead,添加到table后边
+  var  thead = document.createElement("thead");
+  table.appendChild(thead);
+  //创建一个tr 添加到thead后边
+  var tr = document.createElement("tr");
+  thead.appendChild(tr);
+  //得到表头的属性 json[0,1,2]都可以,但是必须要有值,不能为undefined
+  var emp = json[0];
+  // console.log(emp);
+  //遍历emp,把属性名添加到表头里
+  for(var key in emp ){
+    var th = document.createElement("th");
+    th.innerHTML=key;
+    tr.appendChild(th);
+  }
+  //创建一个tbody 添加到table里,不是thead里
+  var tbody = document.createElement("tbody");
+  table.appendChild(tbody);
+  //遍历json里的数据,根据下标. 遍历完一个,添加一个tr
+  for( var i =0 ; i <json.length;i++){
+    var tr = document.createElement("tr");
+    tbody.appendChild(tr);
+    //遍历每个对象的属性,把属性值添加到列中, 每添加一个值,增加一个td
+    var info = json[i];
+    for(var key in info){
+      var td = document.createElement("td");
+      td.innerHTML = info[key];
+      tr.appendChild(td);
+    }
+  }
+
+  </script>
+</body>
+</html>

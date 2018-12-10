@@ -64,15 +64,13 @@
         divinfo.className = "vali_fail";
       }
     }
+    //查找修改元素的位置都一样的,就是正则不一样 把相同的封装起来
     txtName.onblur=function(){
       vali(this,/^\w{1,10}$/);
     }
     txtPwd.onblur = function(){
       vali(this,/^\d{6}$/);
     }
-
-    //查找要修改的元素
-    //修改元素
   </script>
 </body>
 

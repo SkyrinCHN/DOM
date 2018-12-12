@@ -17,7 +17,11 @@
 		</div>
 		<textarea id="sc" style="resize:none;width:200px; height:50px;" readonly></textarea>
     <script>
-			
+			keys.onclick=function(e){
+        if(e.target.nodeName=="BUTTON"){
+          alert(e.target.innerHTML);
+        }
+      }
 		</script>
 	</body>
 </html>

@@ -4,12 +4,45 @@
  <meta charset="utf-8" />
  <title>...</title>
  <style>
-	
+	ul>li{
+    float: left;
+    border: 1px solid   black;
+    padding: 10px 20px;
+    
+  }
+  ul{
+    list-style: none;
+  }
+   ul>li+li{
+    border-left: 0;
+  }
+  /*
+  ul>li:first-child{
+    border-radius: 4px 0 0 4px;
+  }
+  ul>li:last-child{
+    border-radius: 0 4px 4px 0;
+  } */
+  ul>li:nth-child(2){
+    line-height: 21px;
+  }
+
  </style>
+ <script src="js/jquery-1.11.3.js"></script>
+ <script>
+   $("ul>li:gt(0)").css("border-left",0);
+   $("ul>li:first-child").css("border-radius","4px 0 0 4px ");
+   $("ul>li:last-child").css("border-radius"," 0 4px 4px 0 ");
+ </script>
 </head>
 <body>
   <h1>实现按钮组效果</h1>
-  
+  <ul>
+    <li>|<</li>
+    <li>▶</li>
+    <li>||</li>
+    <li>>|</li>
+  </ul>
 	<div style="clear:both"></div>
 
 	<h1>实现表格隔行变色效果</h1>

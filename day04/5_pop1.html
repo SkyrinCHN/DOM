@@ -13,6 +13,25 @@
  </head>
  <body>
 	<div id="pop"></div>
-  <script src="js/5.js"></script>
+  <script>
+    var canMove = false;
+    var offsetX,offsetY;
+    pop.onmousedown=function(e){
+      canMove = true;
+      offsetX = e.offsetX;
+      offsetY = e.offsetY;
+    }
+    pop.onmouseup = function(){
+      canMove = false;
+    }
+    window.onmousemove = function(e){
+      if(canMove){
+        var x = e.clientX,y = e.clientY;
+        var top = y - offsetY, left = x - offsetX;
+        pop.style.top = top+"px";
+        pop.style.left = left+"px";
+      }
+    }
+  </script>
  </body>
 </html>

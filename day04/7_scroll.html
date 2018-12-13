@@ -19,7 +19,15 @@
 		<a href="#">返回顶部</a>
 	</div>
   <script>
-
+    window.scroll = function(){
+      var scrollTop = document.body.scrollTop||document.documentElement.scrollTop;
+      console.log(scrollTop);
+    }
+    if(scrollTop>=600){
+      toTop.style.display = "block";
+    }else{
+      toTop.style.display ="none";
+    }
 	</script>
  </body>
 </html>

@@ -19,7 +19,17 @@
     <script>
 			keys.onclick=function(e){
         if(e.target.nodeName=="BUTTON"){
-          alert(e.target.innerHTML);
+          // alert(e.target.innerHTML);
+          var btn = e.target;
+          switch(btn.innerHTML){
+            case "C":
+            sc.value ="";
+            case "=":
+            sc.value = eval(sc.value);
+            break;
+            default:
+            sc.value += btn.innerHTML;
+          }
         }
       }
 		</script>

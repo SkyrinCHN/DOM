@@ -26,6 +26,14 @@
 			<li class="active"><a data-toggle="tab" href="#">十元套餐</a></li>
 			<li><a data-toggle="tab" href="#">二十元套餐</a></li>
 			<li><a data-toggle="tab" href="#">三十元套餐</a></li>
-		</ul>
+    </ul>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+      $("[data-toggle=tab]").click(function(){
+        //给自己的爹+ active属性, 再清除爹到其余兄弟身上的active属性
+        $(this).parent().addClass("active").siblings().removeClass("active");
+  //return  a     li     添加active属性     li剩下的兄弟   移除active属性
+      })
+    </script>
  </body>
 </html>

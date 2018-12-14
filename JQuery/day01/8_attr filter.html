@@ -49,5 +49,29 @@
 	<input type="button" value="选取title属性包含es的div" id="btn6"/>
 	<input type="button" value="选取包含id属性且title属性值包含es的div" id="btn7"/>
   </h1>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script>
+    $("#btn1").click(function(){
+      $("div[title^=te]").css("background","pink");
+    })
+    $("#btn2").click(function(){
+      $("div[title$=est]").css("background","red");
+    })
+    $("#btn3").click(function(){
+      $("div[title]").css("background","orange");
+    })
+    $("#btn4").click(function(){
+      $("div[title=test]").css("background","pink");
+    })
+    $("#btn5").click(function(){
+      $("div[title!=test]").css("background","pink");
+    })
+    $("#btn6").click(function(){
+      $("div[title*=es]").css("background","pink");
+    })
+    $("#btn7").click(function(){
+      $("div[id][title*=es]").css("background","pink");
+    })
+  </script>
 </body>
 </html>

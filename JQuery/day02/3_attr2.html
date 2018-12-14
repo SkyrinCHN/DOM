@@ -22,6 +22,13 @@
 <script src="js/jquery-1.11.3.js"></script>
 <script>
   //点击小图片，下方my-big中显示大图片
+  $("img.my-small").click(function(){
+    var $img = $(this);
+    var src = $img.attr("data-target");
+    $(".my-big").prop({
+      src:src
+      });
+  })
 </script>
 </body>
 </html>

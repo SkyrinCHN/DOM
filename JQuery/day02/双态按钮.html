@@ -11,23 +11,29 @@
       outline: none;
     }
     .up {
-      background: #fff;
+      background: orange;
       color: #333;
     }
     .down {
-      background: #ddd;
+      background: #f0f;
       color: #fff;
     }
   </style>
 </head>
 <body>
-
-  <button class="btn up">双态按钮</button>
-
-
+<button class="btn up">双态按钮</button>
 <script src="js/jquery-1.11.3.js"></script>
 <script>
   //双态按钮: 让按钮的class在up和down之间切换
+  $("button").click(function(){
+    // var $btn = $(this);
+    // if(!$btn.hasClass("down")){
+    //   $btn.addClass("down");
+    // }else{
+    //   $btn.removeClass("down");
+    // }
+    $(this).toggleClass("down");//增加/去掉  .down样式
+  })
 </script>
 </body>
 </html>

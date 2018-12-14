@@ -28,13 +28,15 @@
 	 <script src="js/jquery-1.11.3.js"></script>
 	 <script>
 		//修改class为top的ul的所有直接子元素
-  
+    $("ul.top").children().css("border","1px solid red");
     //修改class为top的ul的所有后代li
-
+    $("ul.top").find("li").css("box-shadow","0 0 10px pink")
     //为class为child的li绑定单击事件
-
+    $("li.child").click(function(){
+      $(this).siblings().css("background","yellow");
+    })        
 			//选择当前元素的下一个元素/前一个元素/之前所有/之后所有/除自己之外所有
-			
+                 // next()   prev()    prevAll()   nextAll()  siblings()
 	 </script>		
  </body>
 </html>

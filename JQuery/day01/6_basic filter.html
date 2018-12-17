@@ -22,9 +22,22 @@
   <script src="js/jquery-1.11.3.js"></script>
   <script>
     //查找第一个li
+    $("ul>li:first").mouseover(function () {
+      
+      $(this).css("background","yellow");
+      })
     //查找最后一个li
+    $("ul>li:last").mouseover(function () {
+      $(this).css("background","pink");
+      })
     //查找处于偶数位置的li
+    $("ul>li:even").click(function () {
+      $(this).css("color","blue");
+      })
     //查找第2个li
+    $("ul>li:eq(1)").click(function () {
+      $(this).css("color","orange");
+      })
   </script>
 </body>
 </html>

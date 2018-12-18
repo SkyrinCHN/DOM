@@ -19,6 +19,22 @@
 <script src="js/jquery-1.11.3.js"></script>
 <script>
   //请给每个不足60分的成绩+10分，并将超过90分的成绩用绿色背景标识出来
+  $("ul>li").each(function(i,elem){
+    var $li = $(elem);
+    var score = parseInt($li.html()) ;
+    if(score<90){
+      score +=10;
+      $li.html(score);
+    }else if(score>=90){
+     $li.css("background","green")
+    }
+  })
+
+  function add(...nums) {
+    var sum = 0 ;
+    $.each(nums,(i,value)=>sum+=value)
+  }
+  console.log(add(12,12));
 </script>
 </body>
 </html>

@@ -63,11 +63,14 @@
         .prependTo("div.container")
     })
     //单击关闭当前元素事件
-    $("div.container").click(function (e) {
-      var $x =$(e.target);
-      if($x.is(".close")){
-        $x.parent().remove();
-      }
+    // $("div.container").click(function (e) {
+    //   var $x =$(e.target);
+    //   if($x.is(".close")){
+    //     $x.parent().remove();
+    //   }
+    //   })
+      $("div.container").on("click",".close",function(){
+        $(this).parent().remove();
       })
   </script>
 
